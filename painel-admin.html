@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel Admin - Desafio da Semana</title>
+  <link rel="stylesheet" href="estilos/estilos-globais.css">
+  <link rel="icon" href="https://cme.org.br/wp-content/uploads/2018/07/Símbolo-da-CME-150x150.jpg" type="image/x-icon">
+  <style>
+    .admin-container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: var(--color-light-gray);
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .admin-cabecalho {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .admin-cabecalho h1 {
+      color: var(--color-primary);
+      margin-bottom: 10px;
+    }
+
+    .admin-cabecalho p {
+      color: var(--color-dark-gray);
+      font-size: 0.95rem;
+    }
+
+    .campo-formulario {
+      margin-bottom: 20px;
+    }
+
+    .campo-formulario label {
+      display: block;
+      font-weight: bold;
+      color: var(--color-primary);
+      margin-bottom: 8px;
+    }
+
+    .campo-formulario input[type="text"],
+    .campo-formulario textarea,
+    .campo-formulario input[type="date"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid var(--color-primary);
+      border-radius: 6px;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+
+    .campo-formulario textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .campo-formulario input[type="text"]:focus,
+    .campo-formulario textarea:focus,
+    .campo-formulario input[type="date"]:focus {
+      outline: none;
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px rgba(156, 64, 128, 0.1);
+    }
+
+    .grupo-botoes {
+      display: flex;
+      gap: 10px;
+      margin-top: 30px;
+    }
+
+    .grupo-botoes button {
+      flex: 1;
+      padding: 14px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-salvar {
+      background-color: var(--color-primary);
+      color: white;
+    }
+
+    .btn-salvar:hover {
+      background-color: var(--color-primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 126, 167, 0.3);
+    }
+
+    .btn-limpar {
+      background-color: var(--color-gray);
+      color: var(--color-black);
+    }
+
+    .btn-limpar:hover {
+      background-color: var(--color-dark-gray);
+      color: white;
+    }
+
+    .secao-previa {
+      margin-top: 40px;
+      padding-top: 30px;
+      border-top: 2px solid var(--color-primary);
+    }
+
+    .secao-previa h3 {
+      color: var(--color-primary);
+      margin-bottom: 20px;
+    }
+
+    .caixa-previa {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      border-left: 4px solid var(--color-accent);
+    }
+
+    .rotulo-previa {
+      font-size: 0.85rem;
+      color: var(--color-dark-gray);
+      font-weight: bold;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .mensagem-retorno {
+      padding: 15px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      display: none;
+    }
+
+    .mensagem-retorno.sucesso {
+      background-color: #D1FAE5;
+      border-left: 4px solid var(--color-success);
+      color: #065F46;
+      display: block;
+    }
+
+    .mensagem-retorno.erro {
+      background-color: #FEE2E2;
+      border-left: 4px solid var(--color-error);
+      color: #991B1B;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <header id="cabecalho" style="background-color: var(--color-primary); color: white; text-align: center; padding: 20px;">
+    <h2 style="margin: 0; color: white;">Painel Administrativo - Cruzada dos Militares Espíritas</h2>
+  </header>
+
+  <main>
+    <div class="admin-container">
+      <div class="admin-cabecalho">
+        <h1>Desafio da Semana</h1>
+        <p>Atualize a cruzadinha e o versículo espírita</p>
+      </div>
+
+      <div id="mensagemRetorno" class="mensagem-retorno"></div>
+
+      <form id="formularioSemana">
+        <div class="campo-formulario">
+          <label for="dataInicio">Data de Início (Semana):</label>
+          <input type="date" id="dataInicio" name="dataInicio" required>
+        </div>
+
+        <div class="campo-formulario">
+          <label for="temaPalestra">Tema da Palestra:</label>
+          <input type="text" id="temaPalestra" name="temaPalestra" placeholder="Ex: O Caminho da Redenção" required>
+        </div>
+
+        <div class="campo-formulario">
+          <label for="cruzadinha">Cruzadinha (Pergunta ou Desafio):</label>
+          <textarea id="cruzadinha" name="cruzadinha" placeholder="Exemplo: 1. Virtude que nos liberta do sofrimento (8 letras): COMPAIXÃO" required></textarea>
+        </div>
+
+        <div class="campo-formulario">
+          <label for="versiculo">Versículo Espírita:</label>
+          <textarea id="versiculo" name="versiculo" placeholder="Ex: 'Fora da caridade não há salvação.' - Allan Kardec" required></textarea>
+        </div>
+
+        <div class="campo-formulario">
+          <label for="resposta">Resposta da Cruzadinha (oculta por 3 dias):</label>
+          <input type="text" id="resposta" name="resposta" placeholder="Será exibida após 3 dias" required>
+        </div>
+
+        <div class="grupo-botoes">
+          <button type="submit" class="btn-salvar">Salvar Desafio</button>
+          <button type="reset" class="btn-limpar">Limpar Formulário</button>
+        </div>
+      </form>
+
+      <div class="secao-previa">
+        <h3>Prévia do Desafio</h3>
+        <div class="caixa-previa" id="caixaPrevia">
+          <p style="color: var(--color-dark-gray); text-align: center;">
+            Preencha o formulário para ver a prévia aqui
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const dadosSalvos = localStorage.getItem('weeklyChallenge');
+
+      if (dadosSalvos) {
+        const dados = JSON.parse(dadosSalvos);
+        document.getElementById('dataInicio').value = dados.dataInicio || '';
+        document.getElementById('temaPalestra').value = dados.temaPalestra || '';
+        document.getElementById('cruzadinha').value = dados.cruzadinha || '';
+        document.getElementById('versiculo').value = dados.versiculo || '';
+        document.getElementById('resposta').value = dados.resposta || '';
+        atualizarPrevia();
+      }
+
+      const hoje = new Date().toISOString().split('T')[0];
+      document.getElementById('dataInicio').value = hoje;
+    });
+
+    document.getElementById('temaPalestra').addEventListener('input', atualizarPrevia);
+    document.getElementById('cruzadinha').addEventListener('input', atualizarPrevia);
+    document.getElementById('versiculo').addEventListener('input', atualizarPrevia);
+
+    function atualizarPrevia() {
+      const tema = document.getElementById('temaPalestra').value;
+      const cruzadinha = document.getElementById('cruzadinha').value;
+      const versiculo = document.getElementById('versiculo').value;
+
+      let previa = '';
+      if (tema || cruzadinha || versiculo) {
+        previa = `
+          <div style="text-align: center; margin-bottom: 15px;">
+            <h4 style="color: var(--color-primary); margin: 0 0 10px 0;">${tema || 'Palestra'}</h4>
+            <span class="rotulo-previa">Cruzadinha da Semana:</span>
+            <p style="background: #f9f9f9; padding: 12px; border-radius: 4px; margin: 10px 0; text-align: left;">
+              ${cruzadinha || 'Carregando...'}
+            </p>
+            <span class="rotulo-previa">Versículo Espírita:</span>
+            <p style="font-style: italic; color: var(--color-accent); margin: 10px 0;">
+              "${versiculo || 'Carregando...'}"
+            </p>
+          </div>
+        `;
+      }
+      document.getElementById('caixaPrevia').innerHTML = previa;
+    }
+
+    document.getElementById('formularioSemana').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const dados = {
+        dataInicio: document.getElementById('dataInicio').value,
+        temaPalestra: document.getElementById('temaPalestra').value,
+        cruzadinha: document.getElementById('cruzadinha').value,
+        versiculo: document.getElementById('versiculo').value,
+        resposta: document.getElementById('resposta').value,
+        dataSalvada: new Date().toISOString()
+      };
+
+      try {
+        localStorage.setItem('weeklyChallenge', JSON.stringify(dados));
+
+        const retorno = document.getElementById('mensagemRetorno');
+        retorno.className = 'mensagem-retorno sucesso';
+        retorno.textContent = 'Desafio da semana salvo com sucesso!';
+        retorno.style.display = 'block';
+
+        setTimeout(() => {
+          retorno.style.display = 'none';
+        }, 3000);
+      } catch (erro) {
+        const retorno = document.getElementById('mensagemRetorno');
+        retorno.className = 'mensagem-retorno erro';
+        retorno.textContent = 'Erro ao salvar. Tente novamente.';
+        retorno.style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>

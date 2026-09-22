@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agenda de Eventos - Cruzada dos Militares Espíritas</title>
+  <link rel="stylesheet" href="../../estilos/estilos-globais.css">
+  <link rel="icon" href="https://cme.org.br/wp-content/uploads/2018/07/Símbolo-da-CME-150x150.jpg" type="image/x-icon">
+</head>
+
+<body>
+  <div class="nav-overlay" id="navOverlay"></div>
+
+  <header id="cabecalho">
+    <div class="container flex-between" style="align-items: center; gap: 20px;">
+      <div class="logo-section">
+        <img src="../../imagens/icon-cruzada.jpeg" alt="Logo Cruzada" class="logo-icon-img">
+        <div>
+          <div class="logo">CME</div>
+          <div class="logo-subtitle">Cruzada dos Militares Espíritas</div>
+        </div>
+      </div>
+      <nav style="flex: 1; margin-left: 30px;">
+        <ul>
+          <li><a href="../../pagina-inicial.html" class="nav-link">Início</a></li>
+          <li><a href="../quem-somos/quem-somos.html" class="nav-link">Quem Somos</a></li>
+          <li><a href="../biblioteca/biblioteca.html" class="nav-link">Biblioteca</a></li>
+          <li><a href="agenda.html" class="nav-link">Agenda de Eventos</a></li>
+          <li><a href="../galeria/galeria.html" class="nav-link">Galeria de Mídia</a></li>
+          <li><a href="../contato/contato.html" class="nav-link">Contato</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section
+      style="background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%); color: white; padding: 60px 20px; text-align: center;">
+      <div class="container">
+        <h1 style="color: white; font-size: 2.5rem; margin-bottom: 20px;">Agenda de Eventos</h1>
+        <p>Informações, eventos e comunicações importantes da instituição</p>
+      </div>
+    </section>
+
+    <section style="background-color: var(--color-light-gray); padding: 30px 20px;">
+      <div class="container">
+        <div class="flex-center gap-2" style="flex-wrap: wrap;">
+          <button class="btn btn-primary" data-filter-btn="todos">Todos</button>
+          <button class="btn btn-outline" data-filter-btn="estudo">Estudo</button>
+          <button class="btn btn-outline" data-filter-btn="seminarios">Seminários</button>
+          <button class="btn btn-outline" data-filter-btn="palestra">Palestras</button>
+          <button class="btn btn-outline" data-filter-btn="social">Sociais</button>
+          <button class="btn btn-outline" data-filter-btn="reuniao">Reuniões</button>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>Próximos Eventos</h2>
+        <div class="grid-2 gap-3" id="proximosEventos">
+          <div class="card" data-category="estudo">
+            <div
+              style="background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light)); padding: 20px; border-radius: 6px; color: white; margin-bottom: 20px;">
+              <p style="font-size: 0.9rem; margin: 0;">Próximo evento</p>
+              <p style="font-size: 2rem; font-weight: bold; margin: 10px 0 0 0;">29/06/2026</p>
+            </div>
+            <h4>Estudo Online - O Livro Dos Espíritos e Missionários da Luz</h4>
+            <p style="color: var(--color-accent); font-weight: bold;">20:00</p>
+            <p><a href="https://meet.google.com/yqq-quaz-xcx" target="_blank">Participar da reunião</a></p>
+            <div class="flex-between">
+              <span class="badge badge-primary">Estudo</span>
+              <a href="#" style="color: var(--color-primary); font-weight: bold;">Mais info →</a>
+            </div>
+          </div>
+          
+          <div class="grid-2 gap-3" id="proximosEventos">
+            <div class="card" data-category="estudo">
+              <div
+                style="background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light)); padding: 20px; border-radius: 6px; color: white; margin-bottom: 20px;">
+                <p style="font-size: 0.9rem; margin: 0;">Próximo evento</p>
+                <p style="font-size: 2rem; font-weight: bold; margin: 10px 0 0 0;">01/07/2026</p>
+              </div>
+              <h4>Estudo Presencial - Evangelho Segundo Espiritismo, Céu e Inferno, Livro dos Médiums, Livro dos
+                Espíritos</h4>
+              <p style="color: var(--color-accent); font-weight: bold;">18:30</p>
+              <p><a href="https://meet.google.com/yqq-quaz-xcx" target="_blank">Participar da reunião</a></p>
+              <div class="flex-between">
+                <span class="badge badge-primary">Estudo</span>
+                <a href="#" style="color: var(--color-primary); font-weight: bold;">Mais info →</a>
+              </div>
+            </div>
+
+
+            <div class="card" data-category="seminarios">
+              <div
+                style="background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light)); padding: 20px; border-radius: 6px; color: white; margin-bottom: 20px;">
+                <p style="font-size: 0.9rem; margin: 0;">Próximo evento</p>
+                <p style="font-size: 2rem; font-weight: bold; margin: 10px 0 0 0;">01/07/26</p>
+              </div>
+              <h4>Tema - Fluidos na reunião mediúnica</h4>
+              <p style=" font-weight: bold;">Palestrante: Nidia Ribeiro de Carvalho</p>
+              <p style="color: var(--color-primary); font-weight: bold;">14:00 - 16:00</p>
+              <div class="flex-between">
+                <span class="badge badge-accent">seminarios</span>
+                <a href="#" style="color: var(--color-primary); font-weight: bold;">Mais info →</a>
+              </div>
+            </div>
+
+            <div class="card" data-category="palestra">
+              <div
+                style="background: linear-gradient(135deg, var(--color-success), #34D399); padding: 20px; border-radius: 6px; color: white; margin-bottom: 20px;">
+                <p style="font-size: 0.9rem; margin: 0;">Próximo evento</p>
+                <p style="font-size: 2rem; font-weight: bold; margin: 10px 0 0 0;">03/07/26</p>
+              </div>
+              <h4>Tema - Reforma Íntima</h4>
+              <p style=" font-weight: bold;">Palestrante: Daniel Ferreira</p>
+              <p style=" font-weight: bold; color: var(--color-accent);">20:00 - 21:00</p>
+              <div class="flex-between">
+                <span class="badge badge-success">Palestra</span>
+                <a href="#" style="color: var(--color-primary-dark); font-weight: bold;">Mais info →</a>
+              </div>
+            </div>
+
+            <div class="card" data-category="palestra">
+              <div
+                style="background: linear-gradient(135deg, var(--color-success), #34D399); padding: 20px; border-radius: 6px; color: white; margin-bottom: 20px;">
+                <p style="font-size: 0.9rem; margin: 0;">Próximo evento</p>
+                <p style="font-size: 2rem; font-weight: bold; margin: 10px 0 0 0;">10/07/26</p>
+              </div>
+              <h4>Tema - livre</h4>
+              <p style=" font-weight: bold;">Palestrante: Antônio Félix.</p>
+              <p style=" font-weight: bold; color: var(--color-accent);">20:00 - 21:00</p>
+              <div class="flex-between">
+                <span class="badge badge-success">Palestra</span>
+                <a href="#" style="color: var(--color-primary-dark); font-weight: bold;">Mais info →</a>
+              </div>
+            </div>
+
+            <div class="card" data-category="palestra">
+              <div
+                style="background: linear-gradient(135deg, var(--color-success), #34D399); padding: 20px; border-radius: 6px; color: white; margin-bottom: 20px;">
+                <p style="font-size: 0.9rem; margin: 0;">Próximo evento</p>
+                <p style="font-size: 2rem; font-weight: bold; margin: 10px 0 0 0;">17/07/26</p>
+              </div>
+              <h4>Tema - livre</h4>
+              <p style=" font-weight: bold;">Palestrante: Wladimir Stefano.</p>
+              <p style=" font-weight: bold; color: var(--color-accent);">20:00 - 21:00</p>
+              <div class="flex-between">
+                <span class="badge badge-success">Palestra</span>
+                <a href="#" style="color: var(--color-primary-dark); font-weight: bold;">Mais info →</a>
+              </div>
+            </div>
+
+            <div class="card" data-category="palestra">
+              <div
+                style="background: linear-gradient(135deg, var(--color-success), #34D399); padding: 20px; border-radius: 6px; color: white; margin-bottom: 20px;">
+                <p style="font-size: 0.9rem; margin: 0;">Próximo evento</p>
+                <p style="font-size: 2rem; font-weight: bold; margin: 10px 0 0 0;">24/07/26</p>
+              </div>
+              <h4>Tema - Da lei de Igualdade</h4>
+              <p style=" font-weight: bold;">Palestrante: Eugênio Augusto de Paula.</p>
+              <p style=" font-weight: bold; color: var(--color-accent);">20:00 - 21:00</p>
+              <div class="flex-between">
+                <span class="badge badge-success">Palestra</span>
+                <a href="#" style="color: var(--color-primary-dark); font-weight: bold;">Mais info →</a>
+              </div>
+            </div>
+
+            <div class="card" data-category="palestra">
+              <div
+                style="background: linear-gradient(135deg, var(--color-success), #34D399); padding: 20px; border-radius: 6px; color: white; margin-bottom: 20px;">
+                <p style="font-size: 0.9rem; margin: 0;">Próximo evento</p>
+                <p style="font-size: 2rem; font-weight: bold; margin: 10px 0 0 0;">31/07/26</p>
+              </div>
+              <h4>Tema - O Divino Talismã</h4>
+              <p style=" font-weight: bold;">Palestrante: Daniel Paraná.</p>
+              <p style=" font-weight: bold; color: var(--color-accent);">20:00 - 21:00</p>
+              <div class="flex-between">
+                <span class="badge badge-success">Palestra</span>
+                <a href="#" style="color: var(--color-primary-dark); font-weight: bold;">Mais info →</a>
+              </div>
+            </div>
+
+            <div class="card" data-category="reuniao">
+              <div
+                style="background: var(--color-primary-light); padding: 20px; border-radius: 6px; color: white; margin-bottom: 20px;">
+                <p style="font-size: 0.9rem; margin: 0;">Próximo evento</p>
+                <p style="font-size: 2rem; font-weight: bold; margin: 10px 0 0 0;">01/07/2026</p>
+              </div>
+              <h4>Reunião de Socorro Espiritual</h4>
+              <p style=" font-weight: bold; color: var(--color-primary-light);">20:00</p>
+              <div class="flex-between">
+                <span class="badge badge-primary-light">Reunião</span>
+                <a href="#" style="color: var(--color-primary-dark); font-weight: bold;">Mais info →</a>
+              </div>
+            </div>
+            <!--
+          <div class="card" data-category="social">
+            <div style="background: linear-gradient(135deg, #3B82F6, #60A5FA); padding: 20px; border-radius: 6px; color: white; margin-bottom: 20px;">
+              <p style="font-size: 0.9rem; margin: 0;">Próximo evento</p>
+              <p style="font-size: 2rem; font-weight: bold; margin: 10px 0 0 0;">05 JUN</p>
+            </div>
+            <h4>Encontro Social</h4>
+            <p style="color: var(--color-primary); font-weight: bold;">19:00 - 21:00</p>
+            <p>Confraternização e networking entre membros da comunidade. Espaço informal de conexão.</p>
+            <div class="flex-between">
+              <span class="badge badge-info">Social</span>
+              <a href="#" style="color: var(--color-primary); font-weight: bold;">Mais info →</a>
+            </div>
+          </div>
+        -->
+          </div>
+
+          <div class="divider"></div>
+
+          <div
+            style="text-align: center; background-color: var(--color-light-gray); padding: 40px; border-radius: 8px;">
+            <h3>Calendário Completo</h3>
+            <p style="margin-bottom: 30px;">Visualize todos os eventos em um calendário interativo.</p>
+            <button class="btn btn-primary" id="btnCalendario">Abrir Calendário Completo</button>
+          </div>
+        </div>
+    </section>
+  </main>
+
+  <footer id="rodape">
+    <div class="container">
+      <div class="grid-3 gap-3" style="margin-bottom: 40px;">
+        <div>
+          <h5>Sobre CME</h5>
+          <p>
+            Cruzada dos Militares Espíritas - Plataforma de Informação e Experiência dedicada ao compartilhamento de
+            conhecimento.
+          </p>
+        </div>
+        <div>
+          <h5>Links Rápidos</h5>
+          <ul style="list-style: none;">
+            <li><a href="../../pagina-inicial.html">Início</a></li>
+            <li><a href="../quem-somos/quem-somos.html">Quem Somos</a></li>
+            <li><a href="../biblioteca/biblioteca.html">Biblioteca</a></li>
+            <li><a href="../contato/contato.html">Contato</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Contato</h5>
+          <p>Email: cme.jf.cifa@gmail.com</p>
+          <p>Telefone: (32) 9979-1193</p>
+        </div>
+      </div>
+      <div style="border-top: 1px solid rgba(255,255,255,0.2); padding-top: 20px;">
+        <div class="footer-social" style="text-align: center;">
+          <span class="footer-social-label">Siga-nos nas redes sociais</span>
+          <div class="social-icons small">
+            <a href="https://www.instagram.com/cme_jf_cifa?igsh=MWJya2VuOHlxdmJ3ZA==" target="_blank"
+              rel="noopener noreferrer" class="social-icon instagram" title="Instagram da CME">📷</a>
+            <a href="https://www.youtube.com/@cruzadadosmilitaresespirit3499" target="_blank" rel="noopener noreferrer"
+              class="social-icon youtube" title="YouTube da CME">▶️</a>
+          </div>
+        </div>
+        <div style="text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.2);">
+          <p>&copy; 2026 Cruzada dos Militares Espíritas. Todos os direitos reservados.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../scripts/navegacao.js"></script>
+  <script src="../../scripts/efeitos-visuais.js"></script>
+  <script src="../../scripts/interacoes.js"></script>
+</body>
+
+</html>

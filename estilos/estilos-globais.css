@@ -1,0 +1,30 @@
+@import url('../assets/cores/paleta-cores.css');
+@import url('../assets/fontes/tipografia.css');
+@import url('./reset.css');
+@import url('./layout.css');
+@import url('./componentes.css');
+@import url('./animacoes.css');
+@import url('./cabecalho.css');
+@import url('./secao-hero.css');
+
+body {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  overflow-x: hidden;
+}
+
+main {
+  min-height: calc(100vh - 200px);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+}

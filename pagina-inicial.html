@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Início - Cruzada dos Militares Espíritas</title>
+  <link rel="stylesheet" href="estilos/estilos-globais.css">
+  <link rel="icon" href="https://cme.org.br/wp-content/uploads/2018/07/Símbolo-da-CME-150x150.jpg" type="image/x-icon">
+</head>
+<body>
+  <div class="nav-overlay" id="navOverlay"></div>
+
+  <header id="cabecalho">
+    <div class="container flex-between" style="align-items: center; gap: 20px;">
+      <div class="logo-section">
+        <a href="pagina-inicial.html" class="logo-link">
+          <img src="imagens/icon-cruzada.jpeg" alt="Logo Cruzada" class="logo-icon-img">
+        </a>
+        <div>
+          <div class="logo">CME</div>
+          <div class="logo-subtitle">Cruzada dos Militares Espíritas</div>
+        </div>
+      </div>
+      <nav style="flex: 1; margin-left: 30px;">
+       <ul>
+          <li><a href="pagina-inicial.html" class="nav-link">Início</a></li>
+          <li><a href="paginas/quem-somos/quem-somos.html" class="nav-link">Quem Somos</a></li>
+          <li><a href="paginas/biblioteca/biblioteca.html" class="nav-link">Biblioteca</a></li>
+          <li><a href="paginas/agenda/agenda.html" class="nav-link">Agenda de Eventos</a></li>
+          <li><a href="paginas/galeria/galeria.html" class="nav-link">Galeria de Mídia</a></li>
+          <li><a href="paginas/contato/contato.html" class="nav-link">Contato</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-section">
+      <div class="hero-content">
+        <h1>Bem-vindo à Cruzada dos Militares Espíritas</h1>
+        <div class="hero-line"></div>
+        <p>Plataforma de Informação e Experiência</p>
+        <div class="hero-buttons">
+          <a href="paginas/biblioteca/biblioteca.html" class="btn-ripple primary">Explorar Conteúdos</a>
+          <a href="paginas/agenda/agenda.html" class="btn-ripple secondary">Ver Agenda</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sera usado para atualizações futuras -->
+    <!-- <section style="background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%); color: white; padding: 60px 20px;">
+      <div class="container">
+        <h2 style="color: white; text-align: center; margin-bottom: 30px;">Desafio da Semana</h2>
+        <div id="desafioDaSemana" style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 8px; backdrop-filter: blur(10px); border: 2px solid rgba(255,255,255,0.2);">
+          <p style="text-align: center; color: rgba(255,255,255,0.8);">Carregando desafio...</p>
+        </div>
+        <div style="text-align: center; margin-top: 20px;">
+          <a href="painel-admin.html" class="btn" style="background: white; color: var(--color-accent); font-weight: bold;">Atualizar Desafio (Admin)</a>
+        </div>
+      </div>
+    </section> -->
+
+    <section>
+      <div class="container">
+        <h2>Destaques e Avisos</h2>
+        <div class="grid-3 gap-2">
+          <div class="alert alert-success">
+            <h5 style="color: var(--color-success); margin-top: 0;">Novo Conteúdo</h5>
+            <p>Confira os últimos artigos publicados e fique atualizado com as novidades da Cruzada dos Militares Espíritas.</p>
+          </div>
+          <div class="alert alert-warning">
+            <h5 style="color: var(--color-warning); margin-top: 0;">Próximo Evento</h5>
+            <p>Não perca nosso próximo evento! Veja a agenda completa de reuniões e atividades.</p>
+          </div>
+          <div class="alert alert-info">
+            <h5 style="color: var(--color-info); margin-top: 0;">Informação</h5>
+            <p>Acesse a galeria de mídia para fotos e vídeos dos nossos eventos.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background-color: var(--color-light-gray);">
+      <div class="container">
+        <h2>Navegação Principal</h2>
+        <div class="grid-3 gap-3">
+          <a href="paginas/quem-somos/quem-somos.html" style="text-decoration: none;">
+            <div class="card">
+              <h4 class="card-title">Quem Somos</h4>
+              <p class="card-text">Conheça nossa história, missão e visão. Saiba mais sobre os valores que nos guiam.</p>
+              <div class="flex-between">
+                <span class="badge badge-primary">Saiba Mais</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="paginas/agenda/agenda.html" style="text-decoration: none;">
+            <div class="card">
+              <h4 class="card-title">Agenda / Eventos</h4>
+              <p class="card-text">Calendário completo de reuniões, eventos e atividades programadas.</p>
+              <div class="flex-between">
+                <span class="badge badge-primary">Calendário</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="paginas/biblioteca/biblioteca.html" style="text-decoration: none;">
+            <div class="card">
+              <h4 class="card-title">Biblioteca</h4>
+              <p class="card-text">Artigos, estudos, publicações e recursos educativos para aprofundar conhecimentos.</p>
+              <div class="flex-between">
+                <span class="badge badge-primary">Explorar</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="paginas/galeria/galeria.html" style="text-decoration: none;">
+            <div class="card">
+              <h4 class="card-title">Galeria de Mídia</h4>
+              <p class="card-text">Fotos e vídeos dos nossos eventos, atividades e momentos especiais.</p>
+              <div class="flex-between">
+                <span class="badge badge-primary">Galeria</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="paginas/contato/contato.html" style="text-decoration: none;">
+            <div class="card">
+              <h4 class="card-title">Contato</h4>
+              <p class="card-text">Entre em contato conosco através do formulário ou informações de localização.</p>
+              <div class="flex-between">
+                <span class="badge badge-primary">Enviar Mensagem</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+    <footer id="rodape">
+    <div class="container">
+      <div class="grid-3 gap-3" style="margin-bottom: 40px;">
+        <div>
+          <h5>Sobre CME</h5>
+          <p>
+            Cruzada dos Militares Espíritas - Plataforma de Informação e Experiência dedicada ao compartilhamento de
+            conhecimento.
+          </p>
+        </div>
+        <div>
+          <h5>Links Rápidos</h5>
+          <ul style="list-style: none;">
+            <li><a href="pagina-inicial.html">Início</a></li>
+            <li><a href="./paginas/quem-somos/quem-somos.html">Quem Somos</a></li>
+            <li><a href="./paginas/biblioteca/biblioteca.html">Biblioteca</a></li>
+            <li><a href="./paginas/contato/contato.html">Contato</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Contato</h5>
+          <p>Email: cme.jf.cifa@gmail.com</p>
+          <p>Telefone: (32) 9979-1193</p>
+        </div>
+      </div>
+      <div style="border-top: 1px solid rgba(255,255,255,0.2); padding-top: 20px;">
+        <div class="footer-social" style="text-align: center;">
+          <span class="footer-social-label">Siga-nos nas redes sociais</span>
+          <div class="social-icons small">
+            <a href="https://www.instagram.com/cme_jf_cifa?igsh=MWJya2VuOHlxdmJ3ZA==" target="_blank"
+              rel="noopener noreferrer" class="social-icon instagram" title="Instagram da CME">📷</a>
+            <a href="https://www.youtube.com/@cruzadadosmilitaresespirit3499" target="_blank" rel="noopener noreferrer"
+              class="social-icon youtube" title="YouTube da CME">▶️</a>
+          </div>
+        </div>
+        <div style="text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.2);">
+          <p>&copy; 2026 Cruzada dos Militares Espíritas. Todos os direitos reservados.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const caixaDesafio = document.getElementById('desafioDaSemana');
+      const desafioSalvo = localStorage.getItem('weeklyChallenge');
+
+      if (desafioSalvo) {
+        const dados = JSON.parse(desafioSalvo);
+        const dataInicio = new Date(dados.dataInicio);
+        const dataFim = new Date(dataInicio);
+        dataFim.setDate(dataFim.getDate() + 6);
+
+        const hoje = new Date();
+        const diasRestantes = Math.ceil((dataFim - hoje) / (1000 * 60 * 60 * 24));
+        const mostrarResposta = diasRestantes <= 3;
+
+        let html = `
+          <div style="text-align: center;">
+            <h3 style="color: white; margin: 0 0 15px 0;">${dados.temaPalestra}</h3>
+            <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 6px; margin: 15px 0; text-align: left;">
+              <p style="margin: 0 0 10px 0; font-weight: bold; color: #FFC107;">Cruzadinha da Semana:</p>
+              <p style="margin: 0; line-height: 1.6; white-space: pre-wrap;">${dados.cruzadinha}</p>
+            </div>
+            <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 6px; margin: 15px 0;">
+              <p style="margin: 0 0 10px 0; font-weight: bold; color: #FFD700;">Versículo Espírita:</p>
+              <p style="margin: 0; font-style: italic; font-size: 1.1rem;">"${dados.versiculo}"</p>
+            </div>
+            ${mostrarResposta ? `
+              <div style="background: rgba(76, 175, 80, 0.2); padding: 15px; border-radius: 6px; margin: 15px 0; border: 2px solid rgba(76, 175, 80, 0.5);">
+                <p style="margin: 0 0 8px 0; font-weight: bold; color: #81C784;">Resposta Revelada:</p>
+                <p style="margin: 0; font-size: 1.05rem; color: #C8E6C9;">${dados.resposta}</p>
+              </div>
+            ` : `
+              <p style="margin: 15px 0; font-size: 0.9rem; color: rgba(255,255,255,0.7);">
+                Resposta será revelada em ${diasRestantes} dia${diasRestantes !== 1 ? 's' : ''}
+              </p>
+            `}
+            <p style="margin: 15px 0; font-size: 0.85rem; color: rgba(255,255,255,0.6);">
+              Semana de ${new Date(dados.dataInicio).toLocaleDateString('pt-BR')} até ${dataFim.toLocaleDateString('pt-BR')}
+            </p>
+          </div>
+        `;
+        caixaDesafio.innerHTML = html;
+      } else {
+        caixaDesafio.innerHTML = `
+          <div style="text-align: center; padding: 20px;">
+            <p style="color: rgba(255,255,255,0.8); margin-bottom: 10px;">Nenhum desafio cadastrado ainda</p>
+            <small style="color: rgba(255,255,255,0.6);">O diretor pode adicionar um novo desafio clicando no botão abaixo</small>
+          </div>
+        `;
+      }
+    });
+  </script>
+
+  <script src="scripts/navegacao.js"></script>
+  <script src="scripts/efeitos-visuais.js"></script>
+</body>
+</html>

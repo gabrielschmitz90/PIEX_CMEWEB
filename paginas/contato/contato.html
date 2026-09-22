@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato - Cruzada dos Militares Espíritas</title>
+  <link rel="stylesheet" href="../../estilos/estilos-globais.css">
+  <link rel="icon" href="https://cme.org.br/wp-content/uploads/2018/07/Símbolo-da-CME-150x150.jpg" type="image/x-icon">
+</head>
+
+<body>
+
+  <div class="nav-overlay" id="navOverlay"></div>
+
+  <header id="cabecalho">
+    <div class="container flex-between" style="align-items: center; gap: 20px;">
+      <div class="logo-section">
+        <img src="../../imagens/icon-cruzada.jpeg" alt="Logo Cruzada" class="logo-icon-img">
+        <div>
+          <div class="logo">CME</div>
+          <div class="logo-subtitle">Cruzada dos Militares Espíritas</div>
+        </div>
+      </div>
+      
+      <nav style="flex: 1; margin-left: 30px;">
+       <ul>
+          <li><a href="../../pagina-inicial.html" class="nav-link">Início</a></li>
+          <li><a href="../quem-somos/quem-somos.html" class="nav-link">Quem Somos</a></li>
+          <li><a href="../biblioteca/biblioteca.html" class="nav-link">Biblioteca</a></li>
+          <li><a href="../agenda/agenda.html" class="nav-link">Agenda de Eventos</a></li>
+          <li><a href="../galeria/galeria.html" class="nav-link">Galeria de Mídia</a></li>
+          <li><a href="contato.html" class="nav-link">Contato</a></li>
+        </ul>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <section style="background: #243789; color: white; padding: 60px 20px; text-align: center;">
+      <div class="container">
+        <h1 style="color: white; font-size: 2.5rem; margin-bottom: 20px;">
+          Contato
+        </h1>
+        <p>
+          Entre em contato conosco. Estamos sempre à disposição para atendê-lo.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+
+        <div class="grid-2 gap-3">
+
+          <!-- Informações -->
+          <div>
+            <h3>Informações de Contato</h3>
+
+            <div class="card" style="margin-bottom: 20px; border-left: 4px solid var(--color-primary);">
+              <h5 style="color: var(--color-primary); margin-top: 0;">
+                Núcleo
+              </h5>
+              <p>Núcleo Juiz de Fora</p>
+            </div>
+
+            <div class="card" style="margin-bottom: 20px; border-left: 4px solid var(--color-primary);">
+              <h5 style="color: var(--color-primary); margin-top: 0;">
+                Presidente
+              </h5>
+              <p> Newton Cota Batista de Oliveira</p>
+            </div>
+
+            <div class="card" style="margin-bottom: 20px; border-left: 4px solid var(--color-primary);">
+              <h5 style="color: var(--color-primary); margin-top: 0;">
+                Endereço
+              </h5>
+              <p>
+                Rua Antônio Rufino, 325<br>
+                Bairro São Pedro<br>
+                Juiz de Fora - MG
+              </p>
+            </div>
+
+            <div class="card" style="margin-bottom: 20px; border-left: 4px solid var(--color-primary);">
+              <h5 style="color: var(--color-primary); margin-top: 0;">
+                Telefone
+              </h5>
+              <p>
+                <a href="tel:+553299791193">
+                  (32) 9979-1193
+                </a>
+              </p>
+            </div>
+
+            <div class="card" style="border-left: 4px solid var(--color-primary);">
+              <h5 style="color: var(--color-primary); margin-top: 0;">
+                E-mail
+              </h5>
+              <p>
+                <a href="mailto:cme.jf.cifa@gmail.com">
+                  cme.jf.cifa@gmail.com
+                </a>
+              </p>
+            </div>
+          </div>
+
+          <!-- Formulário -->
+
+          <!-- Sera usado para atualizações futuras -->
+
+          <!-- <div>
+            <h3>Envie-nos uma Mensagem</h3>
+
+            <form id="formContato"
+              style="background-color: var(--color-light-gray); padding: 30px; border-radius: 8px;">
+
+              <div style="margin-bottom: 20px;">
+                <label for="nome"
+                  style="display: block; margin-bottom: 8px; font-weight: bold; color: var(--color-primary);">
+                  Nome
+                </label>
+                <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+              </div>
+
+              <div style="margin-bottom: 20px;">
+                <label for="email"
+                  style="display: block; margin-bottom: 8px; font-weight: bold; color: var(--color-primary);">
+                  E-mail
+                </label>
+                <input type="email" id="email" name="email" placeholder="seu.email@exemplo.com" required>
+              </div>
+
+              <div style="margin-bottom: 20px;">
+                <label for="assunto"
+                  style="display: block; margin-bottom: 8px; font-weight: bold; color: var(--color-primary);">
+                  Assunto
+                </label>
+
+                <select id="assunto" name="assunto" required
+                  style="width:100%; padding:12px; border:1px solid var(--color-gray); border-radius:6px; font-family:var(--font-body);">
+
+                  <option value="">Selecione um assunto</option>
+                  <option value="duvida">Dúvida</option>
+                  <option value="sugestao">Sugestão</option>
+                  <option value="parceria">Parceria</option>
+                  <option value="outro">Outro</option>
+
+                </select>
+              </div>
+
+              <div style="margin-bottom: 20px;">
+                <label for="mensagem"
+                  style="display: block; margin-bottom: 8px; font-weight: bold; color: var(--color-primary);">
+                  Mensagem
+                </label>
+
+                <textarea id="mensagem" name="mensagem" rows="6" placeholder="Digite sua mensagem aqui..."
+                  required></textarea>
+              </div>
+
+              <div style="margin-bottom:20px;">
+                <label style="display:flex; align-items:center; gap:10px;">
+                  <input type="checkbox" required>
+                  <span style="font-size:0.9rem;">
+                    Concordo com a política de privacidade.
+                  </span>
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width:100%; padding:14px;">
+                Enviar Mensagem
+              </button>
+
+            </form>
+          </div> -->
+
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Localização -->
+        <div style="text-align:center; background-color:var(--color-light-gray); padding:40px; border-radius:8px;">
+
+          <h3>Localização</h3>
+
+          <p style="margin-bottom:20px;">
+            Visite a sede do Núcleo Juiz de Fora da Cruzada dos Militares Espíritas.
+          </p>
+
+          <iframe src="https://www.google.com/maps?q=Rua+Antônio+Rufino,+325,+São+Pedro,+Juiz+de+Fora,+MG&output=embed"
+            width="100%" height="350" style="border:0; border-radius:8px;" allowfullscreen loading="lazy">
+          </iframe>
+
+          <p style="margin-top:20px; font-size:0.9rem; color:var(--color-dark-gray);">
+            Rua Antônio Rufino, 325 – São Pedro – Juiz de Fora – MG
+          </p>
+
+        </div>
+
+        <!-- Redes sociais -->
+        <div style="text-align:center; margin-top:40px;">
+          <h3 style="margin-bottom:20px;">
+            Siga-nos nas Redes Sociais
+          </h3>
+
+          <div class="flex-center gap-2">
+            <a href="https://www.instagram.com/cme_jf_cifa" target="_blank" rel="noopener noreferrer"
+              class="btn btn-primary btn-small">
+              Instagram
+            </a>
+
+            <a href="https://www.youtube.com/@cruzadadosmilitaresespirit3499" target="_blank" rel="noopener noreferrer"
+              class="btn btn-accent btn-small">
+              YouTube
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    ```
+
+  </main>
+
+  <footer id="rodape">
+    <div class="container">
+
+      ```
+      <div class="grid-3 gap-3" style="margin-bottom:40px;">
+
+        <div>
+          <h5>Sobre a CME</h5>
+          <p>
+            Plataforma dedicada ao compartilhamento de conhecimento,
+            fraternidade e valores espíritas.
+          </p>
+        </div>
+
+        <div>
+          <h5>Links Rápidos</h5>
+
+          <ul style="list-style:none;">
+            <li><a href="../../pagina-inicial.html">Início</a></li>
+            <li><a href="contato.html">Contato</a></li>
+            <li><a href="../biblioteca/biblioteca.html">Biblioteca</a></li>
+            <li><a href="../agenda/agenda.html">Agenda</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5>Contato</h5>
+          <p>Núcleo Juiz de Fora</p>
+          <p>Presidente: João Cristovam Batista Medeiros</p>
+          <p>Telefone: (32) 9979-1193</p>
+          <p>E-mail: cme.jf.cifa@gmail.com</p>
+        </div>
+
+      </div>
+
+      <div style="border-top:1px solid rgba(255,255,255,0.2); padding-top:20px;">
+
+        <div class="footer-social" style="text-align:center;">
+          <span class="footer-social-label">
+            Siga-nos nas redes sociais
+          </span>
+
+          <div class="social-icons small">
+            <a href="https://www.instagram.com/cme_jf_cifa" target="_blank" rel="noopener noreferrer"
+              class="social-icon instagram" title="Instagram da CME">
+              📷
+            </a>
+
+            <a href="https://www.youtube.com/@cruzadadosmilitaresespirit3499" target="_blank" rel="noopener noreferrer"
+              class="social-icon youtube" title="YouTube da CME">
+              ▶️
+            </a>
+          </div>
+        </div>
+
+        <div style="text-align:center; padding-top:20px; border-top:1px solid rgba(255,255,255,0.2);">
+          <p>&copy; 2026 Cruzada dos Militares Espíritas. Todos os direitos reservados.</p>
+        </div>
+
+      </div>
+
+    </div>
+    ```
+
+  </footer>
+
+  <script src="../../scripts/navegacao.js"></script>
+
+  <script src="../../scripts/efeitos-visuais.js"></script>
+
+  <script src="../../scripts/interacoes.js"></script>
+
+</body>
+
+</html>

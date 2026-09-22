@@ -1,0 +1,259 @@
+header {
+  background-color: var(--color-white);
+  border-bottom: 3px solid var(--color-primary);
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 126, 167, 0.12);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: white;
+  font-weight: bold;
+}
+
+.logo-icon-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 4px;
+  filter: drop-shadow(0 2px 4px rgba(0, 126, 167, 0.2));
+}
+
+.logo {
+  font-size: 1.3rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  font-family: var(--font-title);
+}
+
+.logo-subtitle {
+  font-size: 0.7rem;
+  color: var(--color-accent);
+  font-weight: var(--font-weight-semibold);
+}
+
+nav ul {
+  display: flex;
+  gap: 5px;
+  list-style: none;
+  flex: 1;
+}
+
+nav a {
+  font-weight: var(--font-weight-medium);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-bottom: 3px solid transparent;
+  padding: 8px 12px;
+  font-size: 0.95rem;
+  position: relative;
+  color: var(--color-dark-gray);
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 12px;
+  right: 12px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+nav a:hover {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+}
+
+nav a:hover::after {
+  opacity: 1;
+}
+
+.search-box {
+  display: flex;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.search-box input {
+  padding: 10px 15px;
+  border: 2px solid var(--color-gray);
+  border-radius: 4px;
+  font-size: 0.9rem;
+  min-width: 200px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.search-box input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(0, 126, 167, 0.1);
+  background-color: rgba(0, 126, 167, 0.02);
+}
+
+.search-box button {
+  padding: 10px 20px;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.search-box button:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 126, 167, 0.3);
+}
+
+footer {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 40px 20px;
+  text-align: center;
+  margin-top: 60px;
+}
+
+footer a {
+  color: var(--color-accent-light);
+}
+
+footer a:hover {
+  color: var(--color-white);
+}
+
+section {
+  padding: 60px 20px;
+}
+
+section h2 {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  gap: 20px;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.grid-4 {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.gap-1 {
+  gap: 10px;
+}
+
+.gap-2 {
+  gap: 20px;
+}
+
+.gap-3 {
+  gap: 30px;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    gap: 8px;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  nav a {
+    padding: 6px 8px;
+    font-size: 0.85rem;
+  }
+
+  .search-box {
+    margin-left: 0;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .search-box input {
+    min-width: 100%;
+  }
+
+  .logo-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.5rem;
+  }
+
+  .logo {
+    font-size: 1rem;
+  }
+
+  .logo-subtitle {
+    font-size: 0.65rem;
+  }
+
+  section {
+    padding: 40px 20px;
+  }
+
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+}
