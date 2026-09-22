@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - CMEWEB</title>
+    <!-- Verifique se a pasta 'estilos' está na raiz de FRONTEND -->
+    <link rel="stylesheet" href="../estilos/estilos-globais.css">
+    <link rel="stylesheet" href="../estilos/componentes.css">
+    <link rel="stylesheet" href="../estilos/login.css">
+</head>
+<body class="login-page-body"> 
+    
+    <main class="login-main-container"> 
+        <div class="login-card scale-in">
+            <div class="login-header-section">
+                <h2>Login CMEWEB</h2>
+                <p>Acesse o painel administrativo</p>
+            </div>
+            
+            <!-- Adicionado 'return false;' ou preventDefault no JS para evitar o GET na URL -->
+            <form id="loginForm" onsubmit="event.preventDefault();">
+                <div class="input-grupo">
+                    <label for="usuario">Usuário ou E-mail</label>
+                    <input type="text" id="usuario" name="usuario" placeholder="Digite seu usuário" required>
+                </div>
+                
+                <div class="input-grupo">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+                </div>
+                
+                <button type="submit" class="btn-primario">Entrar</button>
+            </form>
+        </div>
+    </main>
+
+    <script src="../scripts/paginas/login.js"></script>
+</body>
+</html>
