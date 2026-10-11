@@ -2,7 +2,7 @@ import os
 from pathlib import Path
 # Este é o arquivo de configuração do banco de dados
 BASE_DIR = Path(__file__).resolve().parent
-DB_PATH = Path(os.getenv("CME_DB") or BASE_DIR.parent.parent / "cme.db")  # o cme.db fica na raiz do projeto
+DB_PATH = Path(os.getenv("CME_DB") or BASE_DIR.parent.parent / "cme.db")  # cme.db da raiz do projeto
 SCHEMA_PATH = BASE_DIR / "cme_schema.sql"
 
 
