@@ -29,6 +29,7 @@ ALGORITHM = "HS256"
 TOKEN_HORAS = 8
 
 CORS_ORIGINS = [
-    "http://127.0.0.1:5500",
-    "http://localhost:5500",
+    f"http://{host}:{porta}"
+    for host in ("127.0.0.1", "localhost")
+    for porta in (5500, 5501, 5502, 5503, 3000, 8080)
 ]

@@ -1,0 +1,42 @@
+/* Estilos só do painel-admin.html (todas as classes começam com pa- para não colidir com o resto do site) */
+:root { --pa-cor: #1f4e79; --pa-borda: #d8dee6; --pa-fundo: #f4f6f9; --pa-erro: #c0392b; --pa-ok: #1e8449; }
+body { margin: 0; font-family: system-ui, Arial, sans-serif; background: var(--pa-fundo); color: #222; }
+.pa-topo { display: flex; justify-content: space-between; align-items: center; padding: 12px 24px; background: var(--pa-cor); color: #fff; }
+.pa-topo h1 { margin: 0; font-size: 1.2rem; }
+.pa-user { display: flex; align-items: center; gap: 12px; font-size: .9rem; }
+.pa-abas { display: flex; gap: 4px; padding: 0 24px; background: #fff; border-bottom: 1px solid var(--pa-borda); overflow-x: auto; }
+.pa-abas button { border: 0; background: none; padding: 14px 18px; cursor: pointer; font-size: .95rem; border-bottom: 3px solid transparent; color: #444; }
+.pa-abas button.ativa { border-bottom-color: var(--pa-cor); color: var(--pa-cor); font-weight: 600; }
+.pa-main { max-width: 1100px; margin: 24px auto; padding: 0 16px; }
+.pa-barra { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.pa-barra h2 { margin: 0; font-size: 1.15rem; }
+.pa-btn { background: var(--pa-cor); color: #fff; border: 0; border-radius: 6px; padding: 8px 14px; cursor: pointer; font-size: .9rem; }
+.pa-btn:hover { filter: brightness(1.1); }
+.pa-btn:disabled { opacity: .6; cursor: wait; }
+.pa-btn-sec { background: #fff; color: var(--pa-cor); border: 1px solid var(--pa-cor); }
+.pa-btn-perigo { background: #fff; color: var(--pa-erro); border: 1px solid var(--pa-erro); }
+.pa-btn-peq { padding: 4px 10px; font-size: .8rem; }
+.pa-tabela-wrap { background: #fff; border: 1px solid var(--pa-borda); border-radius: 8px; overflow-x: auto; }
+.pa-tabela-wrap table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+.pa-tabela-wrap th, .pa-tabela-wrap td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--pa-borda); vertical-align: middle; }
+.pa-tabela-wrap th { background: #f0f3f7; font-weight: 600; }
+.pa-tabela-wrap tr.inativo td { opacity: .5; }
+.pa-vazio { padding: 24px; text-align: center; color: #666; }
+.pa-acoes { display: flex; gap: 6px; flex-wrap: wrap; }
+.pa-selo { padding: 2px 8px; border-radius: 10px; font-size: .75rem; background: #e3f4e8; color: var(--pa-ok); }
+.pa-selo.off { background: #fdecea; color: var(--pa-erro); }
+.pa-foto { width: 40px; height: 40px; object-fit: cover; border-radius: 50%; }
+.pa-msg { padding: 10px 14px; border-radius: 6px; margin-bottom: 12px; background: #e3f4e8; color: var(--pa-ok); }
+.pa-msg.erro { background: #fdecea; color: var(--pa-erro); }
+.pa-erro { color: var(--pa-erro); margin: 8px 0 0; }
+dialog { border: 0; border-radius: 10px; padding: 20px 24px; width: min(520px, 94vw); box-shadow: 0 10px 40px rgba(0,0,0,.25); }
+dialog::backdrop { background: rgba(0,0,0,.45); }
+dialog h3 { margin-top: 0; }
+.pa-campo { display: flex; flex-direction: column; gap: 4px; margin-bottom: 12px; font-size: .9rem; }
+.pa-campo input, .pa-campo select, .pa-campo textarea, .pa-membro-form input, .pa-membro-form select {
+  padding: 8px; border: 1px solid var(--pa-borda); border-radius: 6px; font: inherit; }
+.pa-campo.check { flex-direction: row; align-items: center; gap: 8px; }
+.pa-acoes-form { display: flex; justify-content: flex-end; gap: 8px; margin-top: 16px; }
+.pa-membro-form { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; }
+.pa-membro-form button { grid-column: 1 / -1; }
+.pa-membro-item { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--pa-borda); }
