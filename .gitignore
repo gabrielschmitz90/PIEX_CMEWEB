@@ -8,3 +8,7 @@ venv/
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
+.secret_key
+cme.db
+uploads/
+__pycache__/

@@ -1,28 +1,28 @@
-document.getElementById('loginForm').addEventListener('submit', async function(e) {
-    e.preventDefault(); // Evita que a página recarregue
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("loginForm");
+  const botao = form.querySelector("button[type=submit]");
 
-    const usuario = document.getElementById('usuario').value;
-    const senha = document.getElementById('senha').value;
+  const aviso = document.createElement("p");
+  aviso.style.cssText = "color:#c0392b;margin:0 0 12px;min-height:1em";
+  form.insertBefore(aviso, botao);
 
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    aviso.textContent = "";
+    botao.disabled = true;
+    botao.textContent = "Entrando...";
     try {
-        const resposta = await fetch('http://localhost:8080/api/auth/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ usuario, senha })
-        });
-
-        if (resposta.ok) {
-            alert('Login realizado com sucesso!');
-            // Redireciona para o painel administrativo
-            window.location.href = '../painel-admin.html';
-        } else {
-            const erro = await resposta.json();
-            alert(erro.erro || 'Utilizador ou palavra-passe inválidos.');
-        }
-    } catch (erro) {
-        console.error('Erro na ligação ao servidor:', erro);
-        alert('Não foi possível estabelecer ligação com o servidor.');
+      const r = await api("/api/login", {
+        metodo: "POST",
+        auth: false,
+        corpo: { usuario: form.usuario.value.trim(), senha: form.senha.value },
+      });
+      Auth.salvar(r.token, r.usuario);
+      window.location.href = "../painel-admin.html";
+    } catch (err) {
+      aviso.textContent = err.message;
+      botao.disabled = false;
+      botao.textContent = "Entrar";
     }
+  });
 });
