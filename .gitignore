@@ -12,3 +12,4 @@ venv/
 cme.db
 uploads/
 __pycache__/
+BACKEND/Banco/__pycache__/config.cpython-313.pyc

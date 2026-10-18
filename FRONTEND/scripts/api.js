@@ -1,4 +1,11 @@
-const API_URL = window.location.port === "8000" ? "" : "http://127.0.0.1:8000";
+// Onde está a API?
+// - Site aberto pelo Live Server (127.0.0.1:5500...) ou direto do arquivo: a API é a local (porta 8000).
+// - Site servido pela própria API (porta 8000, túnel ou servidor hospedado): mesma origem, caminho relativo.
+// Para forçar outro endereço, defina window.CME_API_URL antes de carregar este arquivo.
+const _emDesenvolvimento =
+  location.protocol === "file:" ||
+  ((location.hostname === "127.0.0.1" || location.hostname === "localhost") && location.port !== "8000");
+const API_URL = window.CME_API_URL || (_emDesenvolvimento ? "http://127.0.0.1:8000" : "");
 
 const Auth = {
   token: () => sessionStorage.getItem("cme_token"),
