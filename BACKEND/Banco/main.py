@@ -407,3 +407,6 @@ def remover_membro(id: int, membro_id: int, _=Depends(usuario_logado), db=Depend
     db.commit()
     if cur.rowcount == 0:
         raise HTTPException(404, "Registro não encontrado")
+
+if config.FRONTEND_DIR.is_dir():
+    app.mount("/", StaticFiles(directory=config.FRONTEND_DIR, html=True), name="site")

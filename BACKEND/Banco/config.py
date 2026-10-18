@@ -8,6 +8,7 @@ DB_PATH = Path(os.getenv("CME_DB") or BASE_DIR.parent.parent / "cme.db")  # cme.
 SCHEMA_PATH = BASE_DIR / "cme_schema.sql"
 UPLOADS_DIR = Path(os.getenv("CME_UPLOADS") or BASE_DIR.parent.parent / "uploads")
 FOTO_MAX_BYTES = 5 * 1024 * 1024  # 5 MB
+FRONTEND_DIR = BASE_DIR.parent.parent / "FRONTEND"
 
 
 def _carregar_secret() -> str:
