@@ -37,19 +37,39 @@
                     >
                 </div>
 
-                <div class="input-grupo">
-                    <label for="senha">Senha</label>
+<div class="input-grupo">
+    <label for="senha">Senha</label>
 
-                    <input
-                        type="password"
-                        id="senha"
-                        name="senha"
-                        placeholder="Digite sua senha"
-                        autocomplete="current-password"
-                        maxlength="128"
-                        required
-                    >
-                </div>
+    <div class="senha-container">
+        <input
+            type="password"
+            id="senha"
+            name="senha"
+            placeholder="Digite sua senha"
+            autocomplete="current-password"
+            maxlength="128"
+            required
+        >
+
+        <button
+            type="button"
+            id="btnMostrarSenha"
+            class="btn-mostrar-senha"
+            aria-label="Mostrar senha"
+            title="Mostrar senha"
+        >
+            <svg id="iconeOlho" viewBox="0 0 24 24"
+                 width="21" height="21"
+                 fill="none" stroke="currentColor"
+                 stroke-width="2"
+                 stroke-linecap="round"
+                 stroke-linejoin="round">
+                <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"/>
+                <circle cx="12" cy="12" r="3"/>
+            </svg>
+        </button>
+    </div>
+</div>
 
                 <p
                     id="loginMensagem"
