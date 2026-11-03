@@ -74,3 +74,14 @@ def exigir_admin(user=Depends(usuario_logado)):
     if user["perfil"] != "ADMIN":
         raise HTTPException(403, "Acesso restrito a administradores")
     return user
+
+def exigir_perfil(*perfis):
+    def verificar(user=Depends(usuario_logado)):
+        if user["perfil"] not in perfis:
+            raise HTTPException(
+                status_code=403,
+                detail="Você não tem permissão para realizar esta ação"
+            )
+        return user
+
+    return verificar
