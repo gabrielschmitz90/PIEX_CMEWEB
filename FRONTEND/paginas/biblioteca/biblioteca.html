@@ -46,7 +46,8 @@
     <section style="background-color: var(--color-light-gray); padding: 30px 20px;">
       <div class="container">
         <div style="margin-bottom: 20px;">
-          <!-- <input type="text" id="buscaBiblioteca" placeholder="Pesquisar conteúdos..." style="padding: 12px 20px; font-size: 1rem; width: 100%; max-width: 500px;"> -->
+          <label class="sr-only" for="buscaBiblioteca">Pesquisar conteúdos</label>
+          <input type="search" id="buscaBiblioteca" placeholder="Pesquisar conteúdos..." style="padding: 12px 20px; font-size: 1rem; width: 100%; max-width: 500px;">
         </div>
         <div class="flex-center gap-2" style="flex-wrap: wrap;">
           <button class="btn btn-primary" data-filter-btn="todos">Todos</button>
@@ -60,74 +61,8 @@
     <section>
       <div class="container">
         <h2>Conteúdos em Destaque</h2>
-        <div class="grid-2 gap-3">
-          <div class="card" data-category="artigo">
-            <div class="card-image" style="background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));"></div>
-            <h4 class="card-title">Transformação Digital: O Futuro dos Negócios</h4>
-            <p class="card-text">Explore como a tecnologia está transformando o cenário empresarial e os desafios da modernização.</p>
-            <div class="flex-between">
-              <span style="font-size: 0.85rem; color: var(--color-dark-gray);">15 de Maio, 2026</span>
-              <a href="#" class="badge badge-primary" style="text-decoration: none;">Ler Mais</a>
-            </div>
-          </div>
-
-          <div class="card" data-category="estudo">
-            <div class="card-image" style="background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));"></div>
-            <h4 class="card-title">Inovação e Sustentabilidade</h4>
-            <p class="card-text">Como empresas estão integrando práticas sustentáveis com inovação para criar valor.</p>
-            <div class="flex-between">
-              <span style="font-size: 0.85rem; color: var(--color-dark-gray);">12 de Maio, 2026</span>
-              <a href="#" class="badge badge-accent" style="text-decoration: none;">Ler Mais</a>
-            </div>
-          </div>
-
-          <div class="card" data-category="artigo">
-            <div class="card-image" style="background: linear-gradient(135deg, var(--color-success), #34D399);"></div>
-            <h4 class="card-title">Liderança Efetiva em Tempos de Mudança</h4>
-            <p class="card-text">Conheça as estratégias de liderança que funcionam em ambientes dinâmicos e desafiadores.</p>
-            <div class="flex-between">
-              <span style="font-size: 0.85rem; color: var(--color-dark-gray);">10 de Maio, 2026</span>
-              <a href="#" class="badge badge-success" style="text-decoration: none;">Ler Mais</a>
-            </div>
-          </div>
-
-          <div class="card" data-category="estudo">
-            <div class="card-image" style="background: linear-gradient(135deg, #3B82F6, #60A5FA);"></div>
-            <h4 class="card-title">Análise de Dados: Insights para Decisões Melhores</h4>
-            <p class="card-text">Descubra como extrair valor de dados e transformá-los em decisões estratégicas.</p>
-            <div class="flex-between">
-              <span style="font-size: 0.85rem; color: var(--color-dark-gray);">08 de Maio, 2026</span>
-              <a href="#" class="badge badge-info" style="text-decoration: none;">Ler Mais</a>
-            </div>
-          </div>
-
-          <div class="card" data-category="publicacao">
-            <div class="card-image" style="background: linear-gradient(135deg, #F59E0B, #FBBF24);"></div>
-            <h4 class="card-title">Comunicação Efetiva em Equipes Remotas</h4>
-            <p class="card-text">Melhores práticas para manter a comunicação e colaboração em equipes distribuídas.</p>
-            <div class="flex-between">
-              <span style="font-size: 0.85rem; color: var(--color-dark-gray);">05 de Maio, 2026</span>
-              <a href="#" class="badge" style="background-color: #F59E0B; color: white; text-decoration: none;">Ler Mais</a>
-            </div>
-          </div>
-
-          <div class="card" data-category="publicacao">
-            <div class="card-image" style="background: linear-gradient(135deg, #EF4444, #F87171);"></div>
-            <h4 class="card-title">Gestão de Crises e Resiliência Organizacional</h4>
-            <p class="card-text">Ferramentas e estratégias para gerenciar crises e construir organizações resilientes.</p>
-            <div class="flex-between">
-              <span style="font-size: 0.85rem; color: var(--color-dark-gray);">01 de Maio, 2026</span>
-              <a href="#" class="badge" style="background-color: #EF4444; color: white; text-decoration: none;">Ler Mais</a>
-            </div>
-          </div>
-        </div>
-
-        <div style="text-align: center; margin-top: 40px;">
-          <button class="btn btn-outline btn-small">← Anterior</button>
-          <button class="btn btn-primary btn-small" style="margin: 0 10px;">1</button>
-          <button class="btn btn-outline btn-small">2</button>
-          <button class="btn btn-outline btn-small">Próximo →</button>
-        </div>
+        <p id="bibliotecaStatus" role="status" aria-live="polite" style="margin: 24px 0;"></p>
+        <div id="bibliotecaLista" class="grid-2 gap-3" aria-busy="true"></div>
       </div>
     </section>
 
@@ -184,6 +119,7 @@
 
   <script src="../../scripts/navegacao.js"></script>
   <script src="../../scripts/efeitos-visuais.js"></script>
-  <script src="../../scripts/interacoes.js"></script>
+  <script src="../../scripts/api.js"></script>
+  <script src="../../scripts/biblioteca.js"></script>
 </body>
 </html>

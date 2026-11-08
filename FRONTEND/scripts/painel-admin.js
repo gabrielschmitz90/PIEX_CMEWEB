@@ -6,7 +6,7 @@
   const CATEGORIAS = ["Estudo", "Seminário", "Palestra", "Sociais", "Reunião"];
   const RECURSOS = {
     eventos: {
-      titulo: "Eventos", rota: "/api/eventos",
+      titulo: "Eventos", rota: "/api/eventos", editorPodeCriar: true,
       colunas: [["titulo", "Título"], ["data_evento", "Data"], ["categoria", "Categoria"], ["local", "Local"]],
       campos: [
         { n: "titulo", r: "Título", t: "text", req: true },
@@ -22,7 +22,7 @@
       ],
     },
     biblioteca: {
-      titulo: "Biblioteca", rota: "/api/biblioteca",
+      titulo: "Biblioteca", rota: "/api/biblioteca", editorPodeCriar: true,
       colunas: [["titulo", "Título"], ["tipo", "Tipo"], ["autor", "Autor"], ["data_publicacao", "Publicação"]],
       campos: [
         { n: "titulo", r: "Título", t: "text", req: true },
@@ -125,9 +125,12 @@
   else document.addEventListener("cme:autenticado", (e) => iniciar(e.detail), { once: true });
 
   function trocarAba(chave) {
+    if (!RECURSOS[chave] || (chave === "usuarios" && usuarioLogado.perfil !== "ADMIN")) return;
     atual = chave;
+    const recurso = RECURSOS[chave];
+    $("pa-novo").hidden = usuarioLogado.perfil !== "ADMIN" && recurso.editorPodeCriar !== true;
     document.querySelectorAll("#pa-abas button").forEach((b) => b.classList.toggle("ativa", b.dataset.aba === chave));
-    $("pa-titulo").textContent = RECURSOS[chave].titulo;
+    $("pa-titulo").textContent = recurso.titulo;
     carregar();
   }
 
@@ -145,11 +148,13 @@
 
   function renderTabela() {
     const R = RECURSOS[atual];
+    const admin = usuarioLogado.perfil === "ADMIN";
+    const podeCriar = admin || R.editorPodeCriar === true;
     if (!dados.length) {
-      $("pa-tabela").innerHTML = '<div class="pa-vazio">Nada cadastrado ainda. Clique em “+ Novo”.</div>';
+      $("pa-tabela").innerHTML = `<div class="pa-vazio">${podeCriar ? 'Nada cadastrado ainda. Clique em “+ Novo”.' : "Nada cadastrado ainda."}</div>`;
       return;
     }
-    const cab = R.colunas.map((c) => `<th>${esc(c[1])}</th>`).join("") + "<th>Status</th><th>Ações</th>";
+    const cab = R.colunas.map((c) => `<th>${esc(c[1])}</th>`).join("") + "<th>Status</th>" + (admin ? "<th>Ações</th>" : "");
     const linhas = dados.map((r) => {
       const cels = R.colunas.map((c) => {
         if (c[2]) return `<td>${c[2](r)}</td>`;
@@ -157,16 +162,19 @@
         return `<td>${esc(v === null || v === undefined || v === "" ? "—" : v)}</td>`;
       }).join("");
       const ativo = !!r.ativo;
-      const botoes =
-        `<button class="pa-btn pa-btn-sec pa-btn-peq" data-acao="editar" data-id="${r.id}">Editar</button>` +
-        (R.membros ? `<button class="pa-btn pa-btn-sec pa-btn-peq" data-acao="membros" data-id="${r.id}">Membros</button>` : "") +
-        `<button class="pa-btn ${ativo ? "pa-btn-perigo" : "pa-btn-sec"} pa-btn-peq" data-acao="ativo" data-id="${r.id}">${ativo ? "Desativar" : "Reativar"}</button>`;
-      return `<tr class="${ativo ? "" : "inativo"}">${cels}<td><span class="pa-selo ${ativo ? "" : "off"}">${ativo ? "Ativo" : "Inativo"}</span></td><td><div class="pa-acoes">${botoes}</div></td></tr>`;
+      const botoes = admin
+        ? `<button class="pa-btn pa-btn-sec pa-btn-peq" data-acao="editar" data-id="${r.id}">Editar</button>` +
+          (R.membros ? `<button class="pa-btn pa-btn-sec pa-btn-peq" data-acao="membros" data-id="${r.id}">Membros</button>` : "") +
+          `<button class="pa-btn ${ativo ? "pa-btn-perigo" : "pa-btn-sec"} pa-btn-peq" data-acao="ativo" data-id="${r.id}">${ativo ? "Desativar" : "Reativar"}</button>`
+        : "";
+      const acoes = admin ? `<td><div class="pa-acoes">${botoes}</div></td>` : "";
+      return `<tr class="${ativo ? "" : "inativo"}">${cels}<td><span class="pa-selo ${ativo ? "" : "off"}">${ativo ? "Ativo" : "Inativo"}</span></td>${acoes}</tr>`;
     }).join("");
     $("pa-tabela").innerHTML = `<table><thead><tr>${cab}</tr></thead><tbody>${linhas}</tbody></table>`;
   }
 
   function cliqueTabela(e) {
+    if (usuarioLogado.perfil !== "ADMIN") return;
     const b = e.target.closest("button[data-acao]");
     if (!b) return;
     const rec = dados.find((r) => r.id === Number(b.dataset.id));
@@ -223,6 +231,7 @@
 
   function abrirForm(rec) {
     const R = RECURSOS[atual];
+    if (usuarioLogado.perfil !== "ADMIN" && (rec || R.editorPodeCriar !== true)) return;
     editando = rec;
     $("pa-modal-titulo").textContent = (rec ? "Editar" : "Novo") + " — " + R.titulo;
     const visiveis = R.campos.filter((c) => !(rec && c.soCriar) && !(!rec && c.soEditar));
@@ -272,6 +281,7 @@
   async function salvar(e) {
     e.preventDefault();
     const R = RECURSOS[atual];
+    if (usuarioLogado.perfil !== "ADMIN" && (editando || R.editorPodeCriar !== true)) return;
     const form = $("pa-form");
     const erro = $("pa-erro");
     erro.hidden = true;
