@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Galeria de Mídia - Cruzada dos Militares Espíritas</title>
+  <title>Galeria - Cruzada dos Militares Espíritas</title>
   <link rel="stylesheet" href="../../estilos/estilos-globais.css">
+  <link rel="stylesheet" href="../../estilos/galeria.css">
   <link rel="icon" href="https://cme.org.br/wp-content/uploads/2018/07/Símbolo-da-CME-150x150.jpg" type="image/x-icon">
 </head>
 <body>
@@ -39,92 +40,105 @@
     <section style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%); color: white; padding: 60px 20px; text-align: center;">
       <div class="container">
         <h1 style="color: white; font-size: 2.5rem; margin-bottom: 20px;">Galeria</h1>
-        <p>Fotos e vídeos dos nossos eventos e atividades</p>
+        <p>Conheça o espaço e a diretoria da nossa instituição.</p>
       </div>
     </section>
 
-    <section style="background-color: var(--color-light-gray); padding: 30px 20px;">
+    <!--
+      COMO ADICIONAR FOTOS: coloque os arquivos em FRONTEND/imagens/galeria/ com os nomes
+      abaixo (fachada-1.jpg, interior-1.jpg, diretoria-1.jpg...). Enquanto uma foto não existir,
+      o quadro mostra "Foto em breve". Para mais fotos, copie um bloco <figure> inteiro.
+      Para trocar a legenda, edite o texto do data-legenda, do alt e do figcaption.
+    -->
+
+    <section id="fachada">
       <div class="container">
-        <div class="flex-center gap-2" style="flex-wrap: wrap;">
-          <button class="btn btn-primary" data-filter-btn="todos">Todos</button>
-          <button class="btn btn-outline" data-filter-btn="foto">Fotos</button>
-          <button class="btn btn-outline" data-filter-btn="video">Vídeos</button>
-          <button class="btn btn-outline" data-filter-btn="album">Álbuns</button>
+        <h2>Fachada</h2>
+        <p class="galeria-intro">Nossa sede vista por fora.</p>
+        <div class="grid-3 gap-3">
+          <figure class="galeria-item">
+            <button type="button" class="galeria-botao" data-legenda="Fachada da instituição 1">
+              <img src="../../imagens/galeria/fachada-1.jpg" alt="Fachada da instituição 1" loading="lazy" onerror="this.remove()">
+            </button>
+            <figcaption>Fachada da instituição 1</figcaption>
+          </figure>
+          <figure class="galeria-item">
+            <button type="button" class="galeria-botao" data-legenda="Fachada da instituição 2">
+              <img src="../../imagens/galeria/fachada-2.jpg" alt="Fachada da instituição 2" loading="lazy" onerror="this.remove()">
+            </button>
+            <figcaption>Fachada da instituição 2</figcaption>
+          </figure>
+          <figure class="galeria-item">
+            <button type="button" class="galeria-botao" data-legenda="Fachada da instituição 3">
+              <img src="../../imagens/galeria/fachada-3.jpg" alt="Fachada da instituição 3" loading="lazy" onerror="this.remove()">
+            </button>
+            <figcaption>Fachada da instituição 3</figcaption>
+          </figure>
         </div>
       </div>
     </section>
 
-    <section>
+    <section id="interior" class="galeria-secao-alt">
       <div class="container">
-        <div data-category="foto">
-          <h2>Galeria de Fotos</h2>
-          <div class="grid-4 gap-2" style="margin-bottom: 40px;">
-            <div style="position: relative; overflow: hidden; border-radius: 8px; cursor: pointer; aspect-ratio: 1; background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light)); display: flex; align-items: center; justify-content: center; font-size: 3rem;">📷</div>
-            <div style="position: relative; overflow: hidden; border-radius: 8px; cursor: pointer; aspect-ratio: 1; background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light)); display: flex; align-items: center; justify-content: center; font-size: 3rem;">📸</div>
-            <div style="position: relative; overflow: hidden; border-radius: 8px; cursor: pointer; aspect-ratio: 1; background: linear-gradient(135deg, var(--color-success), #34D399); display: flex; align-items: center; justify-content: center; font-size: 3rem;">🎞️</div>
-            <div style="position: relative; overflow: hidden; border-radius: 8px; cursor: pointer; aspect-ratio: 1; background: linear-gradient(135deg, #3B82F6, #60A5FA); display: flex; align-items: center; justify-content: center; font-size: 3rem;">🌅</div>
-            <div style="position: relative; overflow: hidden; border-radius: 8px; cursor: pointer; aspect-ratio: 1; background: linear-gradient(135deg, #F59E0B, #FBBF24); display: flex; align-items: center; justify-content: center; font-size: 3rem;">📷</div>
-            <div style="position: relative; overflow: hidden; border-radius: 8px; cursor: pointer; aspect-ratio: 1; background: linear-gradient(135deg, #EC4899, #F472B6); display: flex; align-items: center; justify-content: center; font-size: 3rem;">📸</div>
-            <div style="position: relative; overflow: hidden; border-radius: 8px; cursor: pointer; aspect-ratio: 1; background: linear-gradient(135deg, #8B5CF6, #A78BFA); display: flex; align-items: center; justify-content: center; font-size: 3rem;">🎞️</div>
-            <div style="position: relative; overflow: hidden; border-radius: 8px; cursor: pointer; aspect-ratio: 1; background: linear-gradient(135deg, #06B6D4, #22D3EE); display: flex; align-items: center; justify-content: center; font-size: 3rem;">🌅</div>
-          </div>
-          <div class="divider"></div>
-        </div>
-
-        <div data-category="video">
-          <h2>Vídeos em Destaque</h2>
-          <div class="grid-3 gap-2">
-            <div style="background-color: var(--color-light-gray); border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-              <div style="width: 100%; padding-top: 56.25%; background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light)); position: relative; display: flex; align-items: center; justify-content: center; font-size: 3rem;">▶️</div>
-              <div style="padding: 16px;">
-                <h5>Entrevista com Especialista</h5>
-                <p style="font-size: 0.9rem; color: var(--color-dark-gray);">Duração: 15 min | Publicado: 12 de Maio</p>
-              </div>
-            </div>
-            <div style="background-color: var(--color-light-gray); border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-              <div style="width: 100%; padding-top: 56.25%; background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light)); position: relative; display: flex; align-items: center; justify-content: center; font-size: 3rem;">▶️</div>
-              <div style="padding: 16px;">
-                <h5>Resumo do Último Evento</h5>
-                <p style="font-size: 0.9rem; color: var(--color-dark-gray);">Duração: 8 min | Publicado: 10 de Maio</p>
-              </div>
-            </div>
-            <div style="background-color: var(--color-light-gray); border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-              <div style="width: 100%; padding-top: 56.25%; background: linear-gradient(135deg, var(--color-success), #34D399); position: relative; display: flex; align-items: center; justify-content: center; font-size: 3rem;">▶️</div>
-              <div style="padding: 16px;">
-                <h5>Tutorial: Como Participar</h5>
-                <p style="font-size: 0.9rem; color: var(--color-dark-gray);">Duração: 5 min | Publicado: 08 de Maio</p>
-              </div>
-            </div>
-          </div>
-          <div class="divider"></div>
-        </div>
-
-        <div data-category="album">
-          <h2>Álbuns de Fotos</h2>
-          <div class="grid-3 gap-2">
-            <div class="card">
-              <div style="background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light)); height: 150px; border-radius: 6px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem;">📁</div>
-              <h5>Conferência 2026</h5>
-              <p style="color: var(--color-dark-gray); margin-bottom: 12px;">45 fotos | Maio de 2026</p>
-              <a href="#" class="btn btn-primary btn-small" style="width: 100%; text-align: center;">Abrir Álbum</a>
-            </div>
-            <div class="card">
-              <div style="background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light)); height: 150px; border-radius: 6px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem;">📁</div>
-              <h5>Seminários Mensais</h5>
-              <p style="color: var(--color-dark-gray); margin-bottom: 12px;">120 fotos | Abril-Maio 2026</p>
-              <a href="#" class="btn btn-accent btn-small" style="width: 100%; text-align: center;">Abrir Álbum</a>
-            </div>
-            <div class="card">
-              <div style="background: linear-gradient(135deg, var(--color-success), #34D399); height: 150px; border-radius: 6px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem;">📁</div>
-              <h5>Encontros Sociais</h5>
-              <p style="color: var(--color-dark-gray); margin-bottom: 12px;">87 fotos | 2026</p>
-              <a href="#" class="btn btn-small" style="background-color: var(--color-success); color: white; width: 100%; text-align: center; text-decoration: none; display: block;">Abrir Álbum</a>
-            </div>
-          </div>
+        <h2>Interior</h2>
+        <p class="galeria-intro">Os ambientes onde recebemos nossos visitantes.</p>
+        <div class="grid-3 gap-3">
+          <figure class="galeria-item">
+            <button type="button" class="galeria-botao" data-legenda="Interior da instituição 1">
+              <img src="../../imagens/galeria/interior-1.jpg" alt="Interior da instituição 1" loading="lazy" onerror="this.remove()">
+            </button>
+            <figcaption>Interior da instituição 1</figcaption>
+          </figure>
+          <figure class="galeria-item">
+            <button type="button" class="galeria-botao" data-legenda="Interior da instituição 2">
+              <img src="../../imagens/galeria/interior-2.jpg" alt="Interior da instituição 2" loading="lazy" onerror="this.remove()">
+            </button>
+            <figcaption>Interior da instituição 2</figcaption>
+          </figure>
+          <figure class="galeria-item">
+            <button type="button" class="galeria-botao" data-legenda="Interior da instituição 3">
+              <img src="../../imagens/galeria/interior-3.jpg" alt="Interior da instituição 3" loading="lazy" onerror="this.remove()">
+            </button>
+            <figcaption>Interior da instituição 3</figcaption>
+          </figure>
         </div>
       </div>
     </section>
+
+    <section id="diretoria">
+      <div class="container">
+        <h2>Diretoria</h2>
+        <p class="galeria-intro">Quem coordena a Cruzada dos Militares Espíritas.</p>
+        <div class="grid-3 gap-3">
+          <figure class="galeria-item">
+            <button type="button" class="galeria-botao" data-legenda="Diretoria da CME 1">
+              <img src="../../imagens/galeria/diretoria-1.jpg" alt="Diretoria da CME 1" loading="lazy" onerror="this.remove()">
+            </button>
+            <figcaption>Diretoria da CME 1</figcaption>
+          </figure>
+          <figure class="galeria-item">
+            <button type="button" class="galeria-botao" data-legenda="Diretoria da CME 2">
+              <img src="../../imagens/galeria/diretoria-2.jpg" alt="Diretoria da CME 2" loading="lazy" onerror="this.remove()">
+            </button>
+            <figcaption>Diretoria da CME 2</figcaption>
+          </figure>
+          <figure class="galeria-item">
+            <button type="button" class="galeria-botao" data-legenda="Diretoria da CME 3">
+              <img src="../../imagens/galeria/diretoria-3.jpg" alt="Diretoria da CME 3" loading="lazy" onerror="this.remove()">
+            </button>
+            <figcaption>Diretoria da CME 3</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
   </main>
+
+  <dialog id="galeriaModal" class="galeria-modal" aria-label="Foto ampliada">
+    <button type="button" class="galeria-fechar" id="galeriaFechar" aria-label="Fechar foto">&times;</button>
+    <img id="galeriaModalImg" src="" alt="">
+    <p id="galeriaModalLegenda"></p>
+  </dialog>
 
   <footer id="rodape">
     <div class="container">
@@ -170,6 +184,6 @@
 
   <script src="../../scripts/navegacao.js"></script>
   <script src="../../scripts/efeitos-visuais.js"></script>
-  <script src="../../scripts/interacoes.js"></script>
+  <script src="../../scripts/galeria.js"></script>
 </body>
 </html>
