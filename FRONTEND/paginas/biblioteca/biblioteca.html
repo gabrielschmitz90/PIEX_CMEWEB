@@ -6,6 +6,12 @@
   <title>Biblioteca - Cruzada dos Militares Espíritas</title>
   <link rel="stylesheet" href="../../estilos/estilos-globais.css">
   <link rel="icon" href="https://cme.org.br/wp-content/uploads/2018/07/Símbolo-da-CME-150x150.jpg" type="image/x-icon">
+  <style>
+    .biblioteca-secao-titulo { margin-bottom: 8px; }
+    .biblioteca-secao-intro { color: var(--color-dark-gray); margin-bottom: 32px; }
+    .biblioteca-autor { font-size: 0.9rem; color: var(--color-accent); font-weight: 600; margin-bottom: 12px; }
+    .biblioteca-secao-alt { background-color: var(--color-light-gray); }
+  </style>
 </head>
 <body>
   <div class="nav-overlay" id="navOverlay"></div>
@@ -39,38 +45,85 @@
     <section style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%); color: white; padding: 60px 20px; text-align: center;">
       <div class="container">
         <h1 style="color: white; font-size: 2.5rem; margin-bottom: 20px;">Biblioteca</h1>
-        <p>Artigos, estudos, publicações e recursos educativos</p>
+        <p>Livros, artigos de estudo e lições de vida para baixar e ler com calma.</p>
       </div>
     </section>
 
-    <section style="background-color: var(--color-light-gray); padding: 30px 20px;">
+    <!-- LIVROS -->
+    <section id="livros">
       <div class="container">
-        <div style="margin-bottom: 20px;">
-          <label class="sr-only" for="buscaBiblioteca">Pesquisar conteúdos</label>
-          <input type="search" id="buscaBiblioteca" placeholder="Pesquisar conteúdos..." style="padding: 12px 20px; font-size: 1rem; width: 100%; max-width: 500px;">
-        </div>
-        <div class="flex-center gap-2" style="flex-wrap: wrap;">
-          <button class="btn btn-primary" data-filter-btn="todos">Todos</button>
-          <button class="btn btn-outline" data-filter-btn="artigo">Artigos</button>
-          <button class="btn btn-outline" data-filter-btn="estudo">Estudos</button>
-          <button class="btn btn-outline" data-filter-btn="publicacao">Publicações</button>
+        <h2 class="biblioteca-secao-titulo">Livros</h2>
+        <p class="biblioteca-secao-intro">Obras selecionadas para download gratuito.</p>
+        <div class="grid-3 gap-3">
+          <article class="card">
+            <h3 class="card-title">Título do Livro 1</h3>
+            <p class="biblioteca-autor">Autor do livro</p>
+            <p class="card-text">Breve descrição do livro em duas ou três linhas, explicando o tema e a quem ele se destina.</p>
+            <a href="../../materiais/livros/livro-1.pdf" class="btn btn-primary btn-small" download>Baixar PDF</a>
+          </article>
+          <article class="card">
+            <h3 class="card-title">Título do Livro 2</h3>
+            <p class="biblioteca-autor">Autor do livro</p>
+            <p class="card-text">Breve descrição do livro em duas ou três linhas, explicando o tema e a quem ele se destina.</p>
+            <a href="../../materiais/livros/livro-2.pdf" class="btn btn-primary btn-small" download>Baixar PDF</a>
+          </article>
+          <article class="card">
+            <h3 class="card-title">Título do Livro 3</h3>
+            <p class="biblioteca-autor">Autor do livro</p>
+            <p class="card-text">Breve descrição do livro em duas ou três linhas, explicando o tema e a quem ele se destina.</p>
+            <a href="../../materiais/livros/livro-3.pdf" class="btn btn-primary btn-small" download>Baixar PDF</a>
+          </article>
         </div>
       </div>
     </section>
 
-    <section>
+    <!-- ARTIGOS DE ESTUDO -->
+    <section id="artigos" class="biblioteca-secao-alt">
       <div class="container">
-        <h2>Conteúdos em Destaque</h2>
-        <p id="bibliotecaStatus" role="status" aria-live="polite" style="margin: 24px 0;"></p>
-        <div id="bibliotecaLista" class="grid-2 gap-3" aria-busy="true"></div>
+        <h2 class="biblioteca-secao-titulo">Artigos de Estudo</h2>
+        <p class="biblioteca-secao-intro">Textos para aprofundar o estudo da doutrina.</p>
+        <div class="grid-3 gap-3">
+          <article class="card">
+            <h3 class="card-title">Título do Artigo de Estudo 1</h3>
+            <p class="card-text">Resumo curto do artigo, com o assunto principal abordado.</p>
+            <a href="../../materiais/artigos/artigo-1.pdf" class="btn btn-outline btn-small" target="_blank" rel="noopener noreferrer">Ler / Baixar PDF</a>
+          </article>
+          <article class="card">
+            <h3 class="card-title">Título do Artigo de Estudo 2</h3>
+            <p class="card-text">Resumo curto do artigo, com o assunto principal abordado.</p>
+            <a href="../../materiais/artigos/artigo-2.pdf" class="btn btn-outline btn-small" target="_blank" rel="noopener noreferrer">Ler / Baixar PDF</a>
+          </article>
+          <article class="card">
+            <h3 class="card-title">Título do Artigo de Estudo 3</h3>
+            <p class="card-text">Resumo curto do artigo, com o assunto principal abordado.</p>
+            <a href="../../materiais/artigos/artigo-3.pdf" class="btn btn-outline btn-small" target="_blank" rel="noopener noreferrer">Ler / Baixar PDF</a>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section style="background: linear-gradient(135deg, var(--color-primary), var(--color-accent)); padding: 40px 20px; text-align: center;">
-      <div class="container" style="color: white;">
-        <h3 style="color: white; margin-bottom: 20px;">Quer compartilhar conteúdo?</h3>
-        <p style="margin-bottom: 20px;">Envie seu artigo, estudo ou publicação para nossa plataforma.</p>
-        <a href="../contato/contato.html" class="btn" style="background-color: white; color: var(--color-primary); font-weight: bold;">Entre em Contato</a>
+    <!-- LIÇÕES DE VIDA -->
+    <section id="licoes">
+      <div class="container">
+        <h2 class="biblioteca-secao-titulo">Lições de Vida</h2>
+        <p class="biblioteca-secao-intro">Reflexões e ensinamentos para o dia a dia.</p>
+        <div class="grid-3 gap-3">
+          <article class="card">
+            <h3 class="card-title">Título da Lição de Vida 1</h3>
+            <p class="card-text">Resumo curto da reflexão ou lição compartilhada.</p>
+            <a href="../../materiais/licoes/licao-1.pdf" class="btn btn-outline btn-small" target="_blank" rel="noopener noreferrer">Ler / Baixar PDF</a>
+          </article>
+          <article class="card">
+            <h3 class="card-title">Título da Lição de Vida 2</h3>
+            <p class="card-text">Resumo curto da reflexão ou lição compartilhada.</p>
+            <a href="../../materiais/licoes/licao-2.pdf" class="btn btn-outline btn-small" target="_blank" rel="noopener noreferrer">Ler / Baixar PDF</a>
+          </article>
+          <article class="card">
+            <h3 class="card-title">Título da Lição de Vida 3</h3>
+            <p class="card-text">Resumo curto da reflexão ou lição compartilhada.</p>
+            <a href="../../materiais/licoes/licao-3.pdf" class="btn btn-outline btn-small" target="_blank" rel="noopener noreferrer">Ler / Baixar PDF</a>
+          </article>
+        </div>
       </div>
     </section>
   </main>
@@ -119,7 +172,5 @@
 
   <script src="../../scripts/navegacao.js"></script>
   <script src="../../scripts/efeitos-visuais.js"></script>
-  <script src="../../scripts/api.js"></script>
-  <script src="../../scripts/biblioteca.js"></script>
 </body>
 </html>
