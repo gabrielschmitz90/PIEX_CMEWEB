@@ -1,0 +1,112 @@
+/* ==========================================================
+   MODO ESCURO - CME
+   Local no projeto: FRONTEND/assets/cores/tema-escuro.css
+   Só é carregado quando o visitante ativa o modo escuro.
+   Todas as regras começam com html[data-tema="escuro"],
+   então o site claro não é afetado.
+   ========================================================== */
+
+html[data-tema="escuro"] {
+  color-scheme: dark;
+
+  /* Paleta: cores de marca clareadas para ter contraste no fundo escuro */
+  --color-primary: #5f74da;
+  --color-primary-dark: #1b7ea6;
+  --color-accent: #b5559a;
+  --color-accent-dark: #96467a;
+
+  /* Neutros invertidos (a paleta original usa estes só para fundos, bordas e texto) */
+  --color-light-gray: #181b22;
+  --color-gray: #3a3f4b;
+  --color-dark-gray: #aab0bd;
+  --color-black: #e6e8ee;
+}
+
+/* Base */
+html[data-tema="escuro"] body {
+  background-color: #0f1115;
+  color: var(--color-black);
+}
+
+/* Cabeçalho e menu */
+html[data-tema="escuro"] header,
+html[data-tema="escuro"] header.scrolled {
+  background-color: rgba(18, 20, 26, 0.96);
+}
+html[data-tema="escuro"] .dropdown-menu {
+  background: #181b22;
+}
+html[data-tema="escuro"] .dropdown-menu a:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+}
+@media (max-width: 768px) {
+  html[data-tema="escuro"] nav {
+    background: #181b22;
+  }
+  html[data-tema="escuro"] nav a.nav-link {
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+  }
+}
+
+/* Cartões */
+html[data-tema="escuro"] .card {
+  background-color: #181b22;
+}
+html[data-tema="escuro"] .card:hover {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* Formulários */
+html[data-tema="escuro"] input[type="text"],
+html[data-tema="escuro"] input[type="email"],
+html[data-tema="escuro"] input[type="phone"],
+html[data-tema="escuro"] textarea,
+html[data-tema="escuro"] select {
+  background-color: #1b1e26;
+  color: var(--color-black);
+}
+html[data-tema="escuro"] .search-box input {
+  color: var(--color-black);
+}
+
+/* Avisos (as cores originais são pastéis claros) */
+html[data-tema="escuro"] .alert-success { background-color: rgba(16, 185, 129, 0.15); color: #6ee7b7; }
+html[data-tema="escuro"] .alert-warning { background-color: rgba(245, 158, 11, 0.15); color: #fcd34d; }
+html[data-tema="escuro"] .alert-error   { background-color: rgba(239, 68, 68, 0.15);  color: #fca5a5; }
+html[data-tema="escuro"] .alert-info    { background-color: rgba(59, 130, 246, 0.15); color: #93c5fd; }
+
+/* Página inicial: faixa de destaque e botão claro do hero */
+html[data-tema="escuro"] .hero-section {
+  background-image: linear-gradient(135deg, #1a2766 0%, #0b3a52 50%, #6b2a58 100%);
+}
+html[data-tema="escuro"] .btn-ripple.primary {
+  color: #243789;
+}
+
+/* Rodapé */
+html[data-tema="escuro"] footer {
+  background-color: #12173a;
+}
+
+/* Galeria */
+html[data-tema="escuro"] .galeria-botao,
+html[data-tema="escuro"] .galeria-botao img,
+html[data-tema="escuro"] .galeria-modal {
+  background: #181b22;
+}
+
+/* Imagens: suaviza o brilho sem alterar as cores */
+html[data-tema="escuro"] img {
+  filter: brightness(0.92);
+}
+html[data-tema="escuro"] .logo-icon-img {
+  background: #fff;
+  filter: none;
+}
+
+/* Botão de alternar (ver tema.js) */
+html[data-tema="escuro"] .tema-botao {
+  background: #232733;
+  color: #f2d47a;
+  border-color: #3a3f4b;
+}
