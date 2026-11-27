@@ -32,6 +32,24 @@
   }
 
   var botao = null;
+  var consulta = window.matchMedia ? window.matchMedia("(max-width: 768px)") : null;
+
+  function ehMobile() {
+    return consulta ? consulta.matches : window.innerWidth <= 768;
+  }
+
+  // Mobile: dentro do cabeçalho, à esquerda do ícone das 3 linhas.
+  // Desktop: botão flutuante no canto inferior direito (fora do cabeçalho,
+  // porque o cabeçalho tem backdrop-filter e prenderia o "fixed").
+  function posicionar() {
+    if (!botao) return;
+    var menu = document.getElementById("navToggle");
+    if (ehMobile() && menu && menu.parentNode) {
+      if (botao.nextSibling !== menu) menu.parentNode.insertBefore(botao, menu);
+    } else if (botao.parentNode !== document.body) {
+      document.body.appendChild(botao);
+    }
+  }
   function atualizarBotao() {
     if (!botao) return;
     var escuro = raiz.getAttribute("data-tema") === "escuro";
@@ -65,6 +83,9 @@
       "box-shadow:0 4px 14px rgba(0,0,0,.2);padding:0;}" +
       ".tema-botao:hover{transform:scale(1.06);}" +
       ".tema-botao:focus-visible{outline:3px solid #9C4080;outline-offset:2px;}" +
+      "@media (max-width:768px){.tema-botao{position:static;flex:none;width:40px;height:40px;" +
+      "margin-left:auto;margin-right:-6px;border:none;background:transparent;box-shadow:none;}" +
+      ".tema-botao:hover{transform:none;}}" +
       "@media (prefers-reduced-motion:reduce){.tema-botao:hover{transform:none;}}";
     document.head.appendChild(estilo);
 
@@ -76,8 +97,12 @@
       aplicar(proximo);
       salvarEscolha(proximo);
     });
-    document.body.appendChild(botao);
+    posicionar();
     atualizarBotao();
+    if (consulta) {
+      if (consulta.addEventListener) consulta.addEventListener("change", posicionar);
+      else if (consulta.addListener) consulta.addListener(posicionar);
+    }
   }
 
   if (document.readyState === "loading") {

@@ -110,3 +110,9 @@ html[data-tema="escuro"] .tema-botao {
   color: #f2d47a;
   border-color: #3a3f4b;
 }
+@media (max-width: 768px) {
+  html[data-tema="escuro"] .tema-botao {
+    background: transparent;
+    border-color: transparent;
+  }
+}
